@@ -15,6 +15,10 @@ const connectionDetails={
   database : "iacsd0923"
 }
 
+// Set the views directory and view engine
+   app.set("views", path.join(__dirname, "views"));
+   app.set("view engine", "ejs");
+
 app.get("/products",(request,response)=>{
   const connection=mysql.createConnection(connectionDetails);
   var statement="select * from product";
